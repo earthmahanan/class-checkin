@@ -7,7 +7,7 @@ const CONFIG = {
   classroom: {
     latitude: 18.826818,   // Example: Bangkok — replace with your coords
     longitude: 98.984067,
-    radiusMeters: 250,
+    radiusMeters: 2500,
   },
 
   // ── Storage backend: "php" or "google" ──
