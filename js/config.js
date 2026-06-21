@@ -17,7 +17,7 @@ const CONFIG = {
   phpApiUrl: "api/checkin.php",
 
   // Google Apps Script Web App URL (deploy Code.gs first, paste URL here)
-  googleApiUrl: "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+  googleApiUrl: "https://script.google.com/macros/s/AKfycbxAs7U1yND_cQncSxyHDavY5M8b2m-y0p2x9BC4l9rbw-LsnYwGU1SilHqIcheDPY8JgQ/exec",
 
   // Shared secret used to validate session tokens (must match lecturer page)
   sessionSecret: "change-this-to-a-long-random-string",
