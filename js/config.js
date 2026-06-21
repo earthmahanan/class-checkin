@@ -26,7 +26,7 @@ const CONFIG = {
   apiKey: "JEHU803DJFISD329",
 
   // Google Sign-In (OAuth 2.0 Web client ID from Google Cloud Console)
-  googleClientId: "YOUR_CLIENT_ID.apps.googleusercontent.com",
+  googleClientId: "1060381587593-er7rmh2q3cb7mrfgpe4mt7pjhf60o5i2.apps.googleusercontent.com",
 
   // Restrict sign-in to these email domains (empty = any Gmail/Google account)
   allowedEmailDomains: ["gmail.com"],
