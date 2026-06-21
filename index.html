@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Check-in</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+  <div class="mx-auto max-w-md px-4 py-8">
+    <header class="mb-8 text-center">
+      <h1 class="text-2xl font-bold tracking-tight">Class Check-in</h1>
+      <p class="mt-1 text-sm text-slate-500">Sign in with Gmail, scan the QR code, then enter your Student ID</p>
+      <span id="session-badge" class="mt-3 inline-block rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-600">
+        No session yet
+      </span>
+    </header>
+
+    <!-- Google Sign-In -->
+    <section id="auth-section" class="mb-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div id="auth-prompt" class="text-center">
+        <p class="mb-1 text-sm font-semibold">Sign in with Gmail</p>
+        <p class="mb-4 text-xs text-slate-500">Use your Gmail account to verify your identity before check-in</p>
+        <div id="google-signin-btn" class="flex justify-center"></div>
+      </div>
+      <div id="auth-signed-in" class="hidden text-center">
+        <p class="text-xs text-slate-500">Signed in as</p>
+        <p id="auth-email" class="mt-1 text-sm font-semibold text-green-700"></p>
+        <button
+          id="sign-out-btn"
+          type="button"
+          class="mt-3 text-xs text-slate-500 underline hover:text-slate-700"
+        >
+          Sign out
+        </button>
+      </div>
+      <p id="auth-error" class="mt-3 hidden rounded-lg bg-red-100 px-3 py-2 text-center text-xs text-red-800" role="alert"></p>
+    </section>
+
+    <!-- QR Scanner (hidden once session is active) -->
+    <section id="scanner-section" class="mb-6 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+      <div class="border-b border-slate-100 px-4 py-3">
+        <h2 class="text-sm font-semibold">Scan session QR code</h2>
+        <p class="text-xs text-slate-500">Point your camera at the code on the board</p>
+      </div>
+      <div id="qr-reader" class="w-full"></div>
+    </section>
+
+    <!-- Check-in form -->
+    <form id="checkin-form" class="hidden space-y-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div>
+        <label for="student-id" class="mb-1 block text-sm font-medium">Student ID</label>
+        <input
+          type="text"
+          id="student-id"
+          name="studentId"
+          autocomplete="off"
+          inputmode="text"
+          placeholder="e.g. 6401234567"
+          class="w-full rounded-lg border border-slate-300 px-4 py-3 text-base focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full rounded-lg bg-blue-600 px-4 py-3 text-base font-semibold text-white transition hover:bg-blue-700 active:bg-blue-800"
+      >
+        Check in
+      </button>
+    </form>
+
+    <div id="status-box" class="mt-4 hidden" role="alert" aria-live="polite"></div>
+
+    <p class="mt-8 text-center text-xs text-slate-400">
+      Location is verified to ensure you are in the classroom.
+    </p>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/geo.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/checkin.js"></script>
+</body>
+</html>
