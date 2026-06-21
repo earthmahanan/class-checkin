@@ -7,11 +7,11 @@ const CONFIG = {
   classroom: {
     latitude: 18.826948,   // Example: Bangkok — replace with your coords
     longitude: 98.983926,
-    radiusMeters: 100,
+    radiusMeters: 250,
   },
 
   // ── Storage backend: "php" or "google" ──
-  storageMode: "googlg",
+  storageMode: "google",
 
   // PHP endpoint (relative path works when hosted on same server)
   phpApiUrl: "api/checkin.php",
