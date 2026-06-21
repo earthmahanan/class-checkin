@@ -5,8 +5,8 @@
 const CONFIG = {
   // ── Classroom location (update to your lecture hall coordinates) ──
   classroom: {
-    latitude: 13.7563,   // Example: Bangkok — replace with your coords
-    longitude: 100.5018,
+    latitude: 18.826948,   // Example: Bangkok — replace with your coords
+    longitude: 98.983926,
     radiusMeters: 100,
   },
 
